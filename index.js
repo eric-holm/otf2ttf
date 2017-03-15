@@ -38,6 +38,7 @@ module.exports = function (opts) {
                 console.log('stderr: ' + stderr);
               }
               if (error === null) {
+                stdout = stdout.replace(/[\(\)\\s]/g,'');
                 fontInfo = JSON.parse(stdout);
                 callback(null, fontInfo);
               }
